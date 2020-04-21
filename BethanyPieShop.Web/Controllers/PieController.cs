@@ -15,7 +15,11 @@ namespace BethanyPieShop.Web
 
         public ViewResult List()
         {
-            return View(_pieRepository.GetAll());
+            PieListViewModel vm = new PieListViewModel();
+
+            vm.Pies = _pieRepository.GetAll();
+
+            return View(vm);
         }
     }
 }
